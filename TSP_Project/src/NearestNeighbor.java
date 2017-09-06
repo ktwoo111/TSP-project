@@ -2,6 +2,8 @@ import java.awt.Point;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
+
+//testing for git
 public class NearestNeighbor {
 	public ReadInput input;
 	public double totalDistance;
