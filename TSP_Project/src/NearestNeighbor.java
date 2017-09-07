@@ -3,7 +3,6 @@ import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
 
-//testing for git
 public class NearestNeighbor {
 	private double totalDistance;
 	private ArrayList<Point> order;
@@ -12,6 +11,7 @@ public class NearestNeighbor {
 		NearestNeighbor hi = new NearestNeighbor();
 		ReadInput input = new ReadInput("Inputs.txt");
 		hi.RunTest(input.points, input.visited, input.numPoints);
+		hi.Print();
 	}
 	
 	NearestNeighbor(){
@@ -24,6 +24,7 @@ public class NearestNeighbor {
 		int i = 0;
 		while(visited.contains(false) && i < n-1) { // while not all points are visited
 			
+			// finding nearest point
 			visited.set(points.indexOf(order.get(i)),true);//marks this point as visited
 			double distance = 999999999;
 			Point nearPoint = new Point();
@@ -36,14 +37,13 @@ public class NearestNeighbor {
 					}
 				}
 			}
-			totalDistance += distance;
-			
-						
+			totalDistance += distance;	
+			//end of finding nearest point
+					
 			order.add(nearPoint);
 			i++;
 		} 
 		totalDistance += Point2D.distance(order.get(order.size()-1).getX(), order.get(order.size()-1).getY(), order.get(0).getX(), order.get(0).getY());
-		Print();
 	}
 	
 	public void Print() {
@@ -51,7 +51,7 @@ public class NearestNeighbor {
 			System.out.println(x);
 			
 		}
-		System.out.printf("total Distance: %.0f\n", totalDistance);		
+		System.out.printf("total Distance: %.5f\n", totalDistance);	
 	}
 
 }
