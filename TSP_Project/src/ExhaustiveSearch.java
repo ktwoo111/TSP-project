@@ -6,38 +6,48 @@ public class ExhaustiveSearch {
 
 	private double totalDistance;
 	private ArrayList<Point> order;
+	//private ArrayList<Double> testing;
 	
 	
 	public static void main(String[] args) {		
 		ExhaustiveSearch hi = new ExhaustiveSearch();
-		ReadInput input = new ReadInput("Inputs.txt");
-		//hi.RunTest(input.points,input.numPoints);
-		//hi.Print();
+		ReadInput input = new ReadInput("RandomInput.txt");
+		hi.RunTest(input.points,input.numPoints);
+		hi.Print();
 			
 	}
 
 public ExhaustiveSearch(){
 	totalDistance = 0.0;
 	order = new ArrayList<Point>();	
+	//testing = new ArrayList<Double>();
 }
 
 public void RunTest(ArrayList<Point> points, int n){
 	double distance = 999999999;
 	int numPoints = n;
+	int factorial = 1;
 	ArrayList<ArrayList<Point>> permutations = new ArrayList<ArrayList<Point>>();
 	permutations = listPermutations(points);
-	for (int i = 0; i < n; i++){
-		n*=n;
+	for (int i = 1; i <= numPoints; i++){
+		factorial*=i;
 	}
 	
-	double temp = 0.0;
-	for (int i = 0; i < n; i++ ){
+	for (int i = 0; i < factorial; i++ ){
+		double temp = 0.0;
 		for (int j = 0; j < numPoints-1; j++){
-			temp = Point2D.distance(permutations.get(i).get(j).getX(), permutations.get(i).get(j).getY(),permutations.get(i).get(j+1).getX() , permutations.get(i).get(j+1).getY())
+			temp += Point2D.distance(permutations.get(i).get(j).getX(), permutations.get(i).get(j).getY(),permutations.get(i).get(j+1).getX() , permutations.get(i).get(j+1).getY());
+			
+		}
+		temp +=Point2D.distance(permutations.get(i).get(0).getX(), permutations.get(i).get(0).getY(),permutations.get(i).get(numPoints-1).getX() , permutations.get(i).get(numPoints-1).getY()); 
+	
+		//testing.add(temp);//testing
+		if(temp < distance){
+			distance = temp;
+			order = permutations.get(i);			
 		}
 	}
-	
-	
+	totalDistance = distance;
 }
 
 //got Permutation function from https://stackoverflow.com/questions/24460480/permutation-of-an-arraylist-of-numbers-using-recursion
@@ -70,6 +80,7 @@ public void Print() {
 		
 	}
 	System.out.printf("total Distance: %.5f\n", totalDistance);	
+
 }
 
 }

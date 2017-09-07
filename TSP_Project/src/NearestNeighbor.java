@@ -9,7 +9,7 @@ public class NearestNeighbor {
 	
 	public static void main(String[] args) {		
 		NearestNeighbor hi = new NearestNeighbor();
-		ReadInput input = new ReadInput("Inputs.txt");
+		ReadInput input = new ReadInput("RandomInput.txt");
 		hi.RunTest(input.points, input.visited, input.numPoints);
 		hi.Print();
 	}
