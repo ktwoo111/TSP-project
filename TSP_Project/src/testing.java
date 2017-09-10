@@ -6,17 +6,17 @@ public class testing {
 		NearestNeighbor NN = new NearestNeighbor();
 		ExhaustiveSearch ES = new ExhaustiveSearch();
 		
-		hello.setN(300);
-		hello.Generate();
-		NN.Execute();
-		NN.Print();
+		//hello.setN(2000);
+		//hello.Generate();
+		//NN.Execute();
+		//NN.Print();
 		//ES.Execute();
 		//ES.Print();
 		
 		
-		/*		
-		int[] arrNN = {100,300,400,500,600,700,800,900,1000};
-		int[] arrES = {2,4,6,7,8,9,10};
+			
+		int[] arrNN = {1000,2000,3000,4000,5000,6000,7000,8000,9000,10000};
+		int[] arrES = {2,4,6,8,10};
 		
 		System.out.println("Nearest Neighbor:");
 		for (int i = 0; i < arrNN.length; i++){
@@ -45,7 +45,7 @@ public class testing {
 			System.out.println(arrES[i] + ": " + miliseconds/3.0 );		
 		}
 		
-		*/
+		
 		
 		
 		
