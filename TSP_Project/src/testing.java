@@ -6,12 +6,12 @@ public class testing {
 		NearestNeighbor NN = new NearestNeighbor();
 		ExhaustiveSearch ES = new ExhaustiveSearch();
 		
-		//hello.setN(10);
-		//hello.Generate();
+		hello.setN(300);
+		hello.Generate();
 		NN.Execute();
 		NN.Print();
-		ES.Execute();
-		ES.Print();
+		//ES.Execute();
+		//ES.Print();
 		
 		
 		/*		
@@ -21,9 +21,10 @@ public class testing {
 		System.out.println("Nearest Neighbor:");
 		for (int i = 0; i < arrNN.length; i++){
 			double miliseconds = 0.0;
-			for(int j = 0; j < 3; j++){
 				hello.setN(arrNN[i]);
 				hello.Generate();
+			for(int j = 0; j < 3; j++){
+			
 				NN.Execute();
 				miliseconds += NN.duration;
 			}
@@ -34,9 +35,10 @@ public class testing {
 		System.out.println("Exhaustive search:");
 		for (int i = 0; i < arrES.length; i++){
 			double miliseconds = 0.0;
-			for(int j = 0; j < 3; j++){
 				hello.setN(arrES[i]);
 				hello.Generate();
+			for(int j = 0; j < 3; j++){
+		
 				ES.Execute();
 				miliseconds += ES.duration;
 			}

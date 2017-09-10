@@ -78,6 +78,7 @@ public ArrayList<ArrayList<Point>> listPermutations(ArrayList<Point> list) {
 
 public void Print() {
 	System.out.println("Exhaustive Search");
+	System.out.println("number of points: " + order.size());
 	for (Point x: order) {
 		System.out.println(x);
 		
