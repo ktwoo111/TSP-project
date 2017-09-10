@@ -37,7 +37,7 @@ public class NearestNeighbor {
 			for(int j = 0; j < n; j++) { // n+1
 				if(visited.get(j) == false) {					
 					double newDistance = Point2D.distance(order.get(i).getX(), order.get(i).getY(), points.get(j).getX(), points.get(j).getY());
-					if(newDistance < distance) {		
+					if(newDistance <= distance) {		
 						distance = newDistance;
 						nearPoint = points.get(j);
 					}

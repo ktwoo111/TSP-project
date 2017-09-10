@@ -6,12 +6,12 @@ public class testing {
 		NearestNeighbor NN = new NearestNeighbor();
 		ExhaustiveSearch ES = new ExhaustiveSearch();
 		
-		hello.setN(10);
-		hello.Generate();
+		//hello.setN(10);
+		//hello.Generate();
 		NN.Execute();
 		NN.Print();
-		//ES.Execute();
-		//ES.Print();
+		ES.Execute();
+		ES.Print();
 		
 		
 		/*		

@@ -42,7 +42,7 @@ public void RunTest(ArrayList<Point> points, int n){
 		temp +=Point2D.distance(permutations.get(i).get(0).getX(), permutations.get(i).get(0).getY(),permutations.get(i).get(numPoints-1).getX() , permutations.get(i).get(numPoints-1).getY()); 
 	
 		//testing.add(temp);//testing
-		if(temp < distance){
+		if(temp <= distance){
 			distance = temp;
 			order = permutations.get(i);			
 		}
