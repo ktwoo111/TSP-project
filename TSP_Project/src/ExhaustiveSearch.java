@@ -6,21 +6,20 @@ public class ExhaustiveSearch {
 
 	private double totalDistance;
 	private ArrayList<Point> order;
-	private double duration;
+	public double duration;
 	
-	
-	public static void main(String[] args) {		
-		ExhaustiveSearch hi = new ExhaustiveSearch();
-		ReadInput input = new ReadInput("RandomInput.txt");
-		hi.RunTest(input.points,input.numPoints);
-		hi.Print();
-			
-	}
 
 public ExhaustiveSearch(){
 	totalDistance = 0.0;
 	order = new ArrayList<Point>();	
 	//testing = new ArrayList<Double>();
+}
+
+public void Execute(){
+	totalDistance = 0.0;
+	order = new ArrayList<Point>();	
+	ReadInput input = new ReadInput("RandomInput.txt");
+	RunTest(input.points,input.numPoints);
 }
 
 public void RunTest(ArrayList<Point> points, int n){
@@ -78,6 +77,7 @@ public ArrayList<ArrayList<Point>> listPermutations(ArrayList<Point> list) {
 
 
 public void Print() {
+	System.out.println("Exhaustive Search");
 	for (Point x: order) {
 		System.out.println(x);
 		

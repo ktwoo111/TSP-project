@@ -8,13 +8,7 @@ public class NearestNeighbor {
 	private ArrayList<Point> order;
 	public double duration;
 	
-	public static void main(String[] args) {		
-		NearestNeighbor hi = new NearestNeighbor();
-		ReadInput input = new ReadInput("RandomInput.txt");
-		hi.RunTest(input.points, input.visited, input.numPoints);
-		hi.Print();
-	}
-	
+
 	public NearestNeighbor(){
 		totalDistance = 0.0;
 		order = new ArrayList<Point>();
@@ -24,11 +18,9 @@ public class NearestNeighbor {
 	public void Execute(){
 		totalDistance = 0.0;
 		order = new ArrayList<Point>();
-		duration = 0;
-		
+		duration = 0;		
 		ReadInput input = new ReadInput("RandomInput.txt");
-		RunTest(input.points, input.visited, input.numPoints);
-		//Print();		
+		RunTest(input.points, input.visited, input.numPoints);		
 	}
 	
 	public void RunTest(ArrayList<Point> points, ArrayList<Boolean> visited, int n) {
@@ -63,6 +55,7 @@ public class NearestNeighbor {
 	}
 	
 	public void Print() {
+		System.out.println("nearest neighbor");
 		for (Point x: order) {
 			System.out.println(x);
 			
