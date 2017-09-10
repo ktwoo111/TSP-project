@@ -20,9 +20,9 @@ public class RandomFileGenerator {
             writer.write(new Integer(numPoints).toString());
             writer.newLine();
             for(int i = 0; i < numPoints; i++){
-            	writer.write(new Integer(rand.nextInt(101)+1).toString());
+            	writer.write(new Integer(rand.nextInt(501)+1).toString());
             	writer.write(" ");
-            	writer.write(new Integer(rand.nextInt(101)+1).toString());
+            	writer.write(new Integer(rand.nextInt(501)+1).toString());
             	writer.newLine();
             }
             writer.close();
