@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class NearestNeighbor {
 	private double totalDistance;
 	private ArrayList<Point> order;
-	private double duration;
+	public double duration;
 	
 	public static void main(String[] args) {		
 		NearestNeighbor hi = new NearestNeighbor();
@@ -15,12 +15,22 @@ public class NearestNeighbor {
 		hi.Print();
 	}
 	
-	NearestNeighbor(){
+	public NearestNeighbor(){
 		totalDistance = 0.0;
 		order = new ArrayList<Point>();
 		duration = 0;
 	}
 
+	public void Execute(){
+		totalDistance = 0.0;
+		order = new ArrayList<Point>();
+		duration = 0;
+		
+		ReadInput input = new ReadInput("RandomInput.txt");
+		RunTest(input.points, input.visited, input.numPoints);
+		//Print();		
+	}
+	
 	public void RunTest(ArrayList<Point> points, ArrayList<Boolean> visited, int n) {
 		double startTime = System.nanoTime();
 	

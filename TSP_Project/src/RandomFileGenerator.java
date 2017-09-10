@@ -3,13 +3,21 @@ import java.io.FileWriter;
 import java.util.Random;
 
 public class RandomFileGenerator {
-    public static void main(String[] args) {
+	public int numPoints;
+    public RandomFileGenerator() {
+    	numPoints = 0;
+    }
+    
+    public void setN(int n){
+    	
+    	numPoints = n;
+    }
+    public void Generate(){
     	Random rand = new Random();
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter("RandomInput.txt"));
-            Integer numPoints = rand.nextInt(9)+2;// writing from 2 to 10 points
-            writer.write(numPoints.toString());
+            writer.write(new Integer(numPoints).toString());
             writer.newLine();
             for(int i = 0; i < numPoints; i++){
             	writer.write(new Integer(rand.nextInt(101)+1).toString());
@@ -29,4 +37,5 @@ public class RandomFileGenerator {
             }
         }
     }
+    	
 }
