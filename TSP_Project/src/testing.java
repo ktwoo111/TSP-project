@@ -7,16 +7,16 @@ public class testing {
 		NearestNeighbor NN = new NearestNeighbor();
 		ExhaustiveSearch ES = new ExhaustiveSearch();
 		
-		//hello.setN(2000);
-		//hello.Generate();
-		//NN.Execute();
-		//NN.Print();
-	//	ES.Execute();
-	//	ES.Print();
+		hello.setN(5);
+		hello.Generate();
+		NN.Execute();
+		NN.Print();
+		ES.Execute();
+		ES.Print();
 		//System.out.println(Point2D.distance(11, 7, 50, 8)+Point2D.distance(50, 8,3,4)+Point2D.distance(3,4,6,8)+Point2D.distance(6,8,11,7));
 		
 		
-		
+		/*
 		int[] arrNN = {1000,2000,3000,4000,5000,6000,7000,8000,9000,10000};
 		int[] arrES = {2,4,6,8,10};
 		
@@ -49,7 +49,7 @@ public class testing {
 			System.out.println(arrES[i] + ": " + miliseconds/3.0 );		
 		}
 		
-		
+		*/
 		
 		
 		
