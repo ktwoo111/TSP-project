@@ -34,14 +34,16 @@ public class ExhaustiveSearch {
 			factorial*=i;
 		}
 
-		for (int i = 0; i < factorial; i++ ){ // n!
-			if(permutations.get(i).get(0).equals(firstPoint)){
-				double temp = 0.0;
-				for (int j = 0; j < numPoints-1; j++){ //n
-					temp += Point2D.distance(permutations.get(i).get(j).getX(), permutations.get(i).get(j).getY(),permutations.get(i).get(j+1).getX() , permutations.get(i).get(j+1).getY());
+		for (int i = 0; i < factorial; i++ ){ // (n)!
 
-				}
-				temp +=Point2D.distance(permutations.get(i).get(0).getX(), permutations.get(i).get(0).getY(),permutations.get(i).get(numPoints-1).getX() , permutations.get(i).get(numPoints-1).getY()); 
+			double temp = 0.0;
+			for (int j = 0; j < numPoints-1; j++){ //n
+				temp += Point2D.distance(permutations.get(i).get(j).getX(), permutations.get(i).get(j).getY(),permutations.get(i).get(j+1).getX() , permutations.get(i).get(j+1).getY());
+
+			}
+			temp +=Point2D.distance(permutations.get(i).get(0).getX(), permutations.get(i).get(0).getY(),permutations.get(i).get(numPoints-1).getX() , permutations.get(i).get(numPoints-1).getY()); 
+			
+			if(permutations.get(i).get(0).equals(firstPoint)){
 				if(temp <= distance){
 					distance = temp;
 					order = permutations.get(i);			
