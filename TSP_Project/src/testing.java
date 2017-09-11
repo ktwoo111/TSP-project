@@ -7,7 +7,7 @@ public class testing {
 		NearestNeighbor NN = new NearestNeighbor();
 		ExhaustiveSearch ES = new ExhaustiveSearch();
 		
-		hello.setN(5);
+		hello.setN(10);
 		hello.Generate();
 		NN.Execute();
 		NN.Print();

@@ -84,6 +84,7 @@ public class ExhaustiveSearch {
 			System.out.println(x);
 
 		}
+		System.out.println(order.get(0));
 		System.out.printf("total Distance: %.5f\n", totalDistance);	
 		System.out.println("miliseconds passed: " + duration);
 	}
