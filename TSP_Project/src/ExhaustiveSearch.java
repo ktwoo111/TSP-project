@@ -24,31 +24,36 @@ public class ExhaustiveSearch {
 
 	public void RunTest(ArrayList<Point> points, int n){
 		Point firstPoint = points.get(0);
-		double startTime = System.nanoTime();
 		double distance = 999999999;
 		int numPoints = n;
-		int factorial = 1;
+		//int factorial = 1;
 		ArrayList<ArrayList<Point>> permutations = new ArrayList<ArrayList<Point>>();
-		permutations = listPermutations(points); // n!
+		permutations = listPermutations(new ArrayList<Point>(points.subList(1,points.size())));
+		for (int i = 0; i < permutations.size(); i++){
+			permutations.get(i).add(0,points.get(0));
+			//System.out.println(permutations.get(i));
+		}
+				
+		double startTime = System.nanoTime();
+		/*
 		for (int i = 1; i <= numPoints; i++){ //n
 			factorial*=i;
 		}
+		*/
 
-		for (int i = 0; i < factorial; i++ ){ // (n)!
-
+		for (int i = 0; i < permutations.size(); i++ ){ // (n-1)!
 			double temp = 0.0;
-			for (int j = 0; j < numPoints-1; j++){ //n
+			for (int j = 0; j < numPoints-1; j++){ //(n)
 				temp += Point2D.distance(permutations.get(i).get(j).getX(), permutations.get(i).get(j).getY(),permutations.get(i).get(j+1).getX() , permutations.get(i).get(j+1).getY());
 
 			}
 			temp +=Point2D.distance(permutations.get(i).get(0).getX(), permutations.get(i).get(0).getY(),permutations.get(i).get(numPoints-1).getX() , permutations.get(i).get(numPoints-1).getY()); 
 			
-			if(permutations.get(i).get(0).equals(firstPoint)){
+		
 				if(temp <= distance){
 					distance = temp;
 					order = permutations.get(i);			
-				}
-			}
+				}			
 		}
 		totalDistance = distance;
 		double endTime = System.nanoTime();
