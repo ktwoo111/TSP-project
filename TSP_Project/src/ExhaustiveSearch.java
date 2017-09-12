@@ -49,7 +49,7 @@ public class ExhaustiveSearch {
 			}
 			temp +=Point2D.distance(permutations.get(i).get(0).getX(), permutations.get(i).get(0).getY(),permutations.get(i).get(numPoints-1).getX() , permutations.get(i).get(numPoints-1).getY()); 
 			
-		
+
 				if(temp <= distance){
 					distance = temp;
 					order = permutations.get(i);			

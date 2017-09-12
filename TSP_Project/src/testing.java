@@ -7,13 +7,13 @@ public class testing {
 		NearestNeighbor NN = new NearestNeighbor();
 		ExhaustiveSearch ES = new ExhaustiveSearch();
 		
-		//hello.setN(5);
+		//hello.setN(500);
 		//hello.Generate();
 		//NN.Execute();
 		//NN.Print();
 		ES.Execute();
 		ES.Print();
-	//	System.out.println(Point2D.distance(373, 497, 292, 427)+Point2D.distance(292, 427,179,414)+Point2D.distance(179,414,248,126)+Point2D.distance(248,126,419,56)+Point2D.distance(419, 56,373,497));
+		//System.out.println(Point2D.distance(55, 62, 50, 43)+Point2D.distance(50, 43,69,6)+Point2D.distance(69,6,86,42)+Point2D.distance(89,42,89,98)+Point2D.distance(89, 98,66,75)+Point2D.distance(66, 75,40,86)+Point2D.distance(40, 86,55,62));
 		
 		
 		
